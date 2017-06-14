@@ -15,9 +15,8 @@ sites
 
 // Real: 00:00:00.378, CPU: 00:00:00.031, GC gen0: 0, gen1: 0, gen2: 0 
 #time
-let siteData = 
-    sites
-    |> List.map samples.fetchUrlAsync
-    |> Async.Parallel
-    |> Async.RunSynchronously
+sites
+|> List.map samples.fetchUrlAsync
+|> Async.Parallel
+|> Async.RunSynchronously
 #time
