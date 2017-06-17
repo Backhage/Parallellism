@@ -20,3 +20,19 @@ sites
 |> Async.Parallel
 |> Async.RunSynchronously
 #time
+
+// When I run this example the clients has to wait around 45-55 ms before getting the lock
+let lockedExample =
+    [1..10]
+    |> List.map (fun i -> samples.makeCountingTask samples.LockedCounter.Add i)
+    |> Async.Parallel
+    |> Async.RunSynchronously
+    |> ignore
+
+// In this case we cannot measure the waiting time, simply because there is none!
+let messageExample =
+    [1..10]
+    |> List.map (fun i -> samples.makeCountingTask samples.MessageBasedCounter.Add i)
+    |> Async.Parallel
+    |> Async.RunSynchronously
+    |> ignore
