@@ -1,5 +1,5 @@
 ﻿#load "Samples.fs"
-open Parallellism
+open Parallelism
 
 let sites = ["http://www.google.com";
              "http://www.yahoo.com";

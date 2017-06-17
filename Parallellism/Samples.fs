@@ -1,4 +1,4 @@
-﻿namespace Parallellism
+﻿namespace Parallelism
 
 open System
 open System.IO
